@@ -88,7 +88,7 @@ def show_entries():
 
     if sort_selected in ALLOWED_SORT_FIELDS:
         # Safely sorting based on predefined allowed fields
-        query = f'SELECT id, email, phone_number, address FROM entries ORDER BY {sort_selected}'
+        query = f'SELECT id, name, email, phone_number, address FROM entries ORDER BY {sort_selected}'
         entries = db.execute(query).fetchall()
     else:
         # If no sort is specified or it's not allowed, show all entries without sorting
@@ -118,5 +118,5 @@ def delete():
 # @app.route('/select_category', methods=['POST'])
 # def select_category():
 #     category_selected = request.form.get('category_selected', None)
-#     # Redirect to the show_entries route with the selected category as a query parameter
+#     Redirect to the show_entries route with the selected category as a query parameter
 #     return redirect(url_for('show_entries', category=category_selected))
